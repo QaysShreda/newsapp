@@ -22,18 +22,21 @@ class NewsWidget extends StatelessWidget {
       Positioned(
         top: 15,
         left: 15,
-        child: Icon(Icons.favorite_border_outlined),
+        child: Icon(Icons.favorite_border_outlined,
+            color: Theme.of(context).colorScheme.onSurface),
       ),
       Positioned(
           bottom: 0,
           child: Container(
             width: 260,
             height: 50,
-            color: Colors.amberAccent,
+            color:
+                Theme.of(context).colorScheme.surfaceVariant.withOpacity(0.65),
             child: Padding(
               padding: const EdgeInsets.only(top: 6.0),
               child: Text(
                 "اشتري جهاز كمبيوتر واحصل على ماوس مجانا فورا دون تردد",
+                overflow: TextOverflow.clip,
                 style: TextStyle(),
               ),
             ),

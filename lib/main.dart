@@ -20,7 +20,11 @@ class MyApp extends StatelessWidget {
         GlobalCupertinoLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,
       ],
-      theme: ThemeData(colorScheme: lightColorScheme),
+      theme: ThemeData(
+        colorScheme: darkColorScheme,
+        useMaterial3: true,
+        canvasColor: Color(0XFF171719),
+      ),
       supportedLocales: [
         Locale('ar', 'AR'),
       ],
