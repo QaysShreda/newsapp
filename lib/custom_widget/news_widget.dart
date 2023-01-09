@@ -31,7 +31,7 @@ class NewsWidget extends StatelessWidget {
             height: 50,
             color: Colors.amberAccent,
             child: Padding(
-              padding: const EdgeInsets.only(right: 6.0),
+              padding: const EdgeInsets.only(top: 6.0),
               child: Text(
                 "اشتري جهاز كمبيوتر واحصل على ماوس مجانا فورا دون تردد",
                 style: TextStyle(),

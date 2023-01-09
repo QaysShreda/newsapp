@@ -18,6 +18,7 @@ class HomePage extends StatelessWidget {
     return Scaffold(
         appBar: AppBar(
           title: Text("News APP"),
+          centerTitle: true,
         ),
         body: DefaultTabController(
           length: 3,
@@ -26,26 +27,38 @@ class HomePage extends StatelessWidget {
               SizedBox(
                 height: 300,
                 child: ListView.separated(
-                  physics: BouncingScrollPhysics(),
                   scrollDirection: Axis.horizontal,
-                  itemCount: 5,
+                  itemCount: 4,
                   itemBuilder: ((context, index) {
-                    return NewsWidget(imgUrl: imgUrls[0]);
+                    return NewsWidget(imgUrl: imgUrls[index]);
                   }),
                   separatorBuilder: ((context, index) => SizedBox(
                         width: 20,
                       )),
                 ),
               ),
-              TabBar(
-                tabs: [
-                  Text(
-                    "محلية",
-                    style: TextStyle(color: Colors.black),
-                  ),
-                  Text("تكنلوجيا", style: TextStyle(color: Colors.black)),
-                  Text("مقالات", style: TextStyle(color: Colors.black)),
-                ],
+              SizedBox(
+                height: 80,
+                child: TabBar(
+                  // indicatorSize: TabBarIndicatorSize.label,
+                  // indicatorColor: Colors.amber,
+                  tabs: [
+                    Text(
+                      "محلية",
+                      style: TextStyle(color: Colors.black, fontSize: 22),
+                    ),
+                    Text("تكنلوجيا",
+                        style: TextStyle(color: Colors.black, fontSize: 22)),
+                    Icon(Icons.ac_unit, color: Colors.black45),
+                  ],
+                ),
+              ),
+              Expanded(
+                child: TabBarView(children: [
+                  Center(child: Text("Views 1")),
+                  Center(child: Text("Views 2")),
+                  Center(child: Text("Views 3")),
+                ]),
               )
             ],
           ),
