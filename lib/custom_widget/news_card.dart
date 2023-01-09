@@ -15,6 +15,7 @@ class NewsCard extends StatelessWidget {
         clipBehavior: Clip.antiAlias,
         child: Card(
           child: Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               SizedBox(
                 height: 120,
@@ -26,19 +27,26 @@ class NewsCard extends StatelessWidget {
                   fit: BoxFit.cover,
                 ),
               ),
-              Column(
-                children: [
-                  Container(
-                    child: Text("تم افتتاح شركة البرمجيات الاولى في فلسطين "),
-                  ),
-                  Row(
-                    children: [
-                      Icon(Icons.favorite_border_outlined),
-                      Icon(Icons.share_outlined),
-                      Icon(Icons.remove_red_eye_outlined),
-                    ],
-                  )
-                ],
+              Expanded(
+                child: Column(
+                  children: [
+                    Container(
+                      child: Text(
+                        'مشاهد مذهلة لوميض البروق في سماء مكة المصور عبدالقادرالمالكي يخطف صورا لمشاهد وميض البروق وجمال هطول المطر في سماء مكة ',
+                        overflow: TextOverflow.ellipsis,
+                        maxLines: 2,
+                      ),
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        Icon(Icons.favorite_border_outlined),
+                        Icon(Icons.share_outlined),
+                        Icon(Icons.remove_red_eye_outlined),
+                      ],
+                    )
+                  ],
+                ),
               )
             ],
           ),
